@@ -8,10 +8,10 @@ namespace Main
 {
     public class Student
     {
-        string Name;
-        string Surname;
-        int Age;
-        string Class;
+        private string Name;
+        private string Surname;
+        private int Age;
+        private string Class;
 
         public void SetName(string N)
         {
