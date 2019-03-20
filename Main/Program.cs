@@ -20,35 +20,39 @@ namespace Main
             var result = Console.ReadLine();
             return Convert.ToInt32(result);
         }
-
+        
 
 
         static void Main(string[] args)
         {
+
+            List<Student> studentlist = new List<Student>();
+            int studentCount = 0;
             int userInput = 0;
             do
             {
                 if (userInput == 1)
                 {
-                    Student student1 = new Student();
+                    
+                    studentlist.Add(new Student());
                     Console.WriteLine("Insert Name:");
-                    student1.SetName(Console.ReadLine());
+                    studentlist[studentCount].SetName(Console.ReadLine());
                     Console.WriteLine("Insert Surname:");
-                    student1.SetSurname(Console.ReadLine());
+                    studentlist[studentCount].SetSurname(Console.ReadLine());
                     Console.WriteLine("Insert Age:");
-                    student1.SetAge(Convert.ToInt32(Console.ReadLine()));
+                    studentlist[studentCount].SetAge(Convert.ToInt32(Console.ReadLine()));
                     Console.WriteLine("Insert Class:");
-                    student1.SetClass(Console.ReadLine());
-                    student1.ShowStudent();
+                    studentlist[studentCount].SetClass(Console.ReadLine());
+                    studentCount = studentCount + 1;
                 }
 
                 userInput = DisplayLibraryMenu();
             } while (userInput != 5);
-        
+            
+            
 
-            
-            
-           
+
+
         }
     }
 }
