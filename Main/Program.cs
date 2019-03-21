@@ -46,8 +46,9 @@ namespace Main
                     studentlist[studentCount].SetClass(Console.ReadLine());
                     studentCount = studentCount + 1;
                 }
+               
 
-                userInput = DisplayLibraryMenu();
+                    userInput = DisplayLibraryMenu();
             } while (userInput != 5);
             
             
