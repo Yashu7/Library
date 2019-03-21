@@ -38,9 +38,10 @@ namespace Main
 
             public void ShowStudent()
         {
+            Console.WriteLine();
             Console.WriteLine("Info about student:");
             Console.WriteLine("ID: {0}. Name: {1}. Surname: {2}. Age: {3}. Class: {4}. ",ID, Name, Surname, Age, Class);
-            
+            Console.WriteLine();
         }
     }
 }

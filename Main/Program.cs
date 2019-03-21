@@ -10,6 +10,7 @@ namespace Main
     {
         static public int DisplayLibraryMenu()
         {
+            Console.WriteLine();
             Console.WriteLine("Welcome to Library");
             Console.WriteLine();
             Console.WriteLine("1. Create a student account");
@@ -17,10 +18,27 @@ namespace Main
             Console.WriteLine("3. Check for student");
             Console.WriteLine("4. Check for book");
             Console.WriteLine("5. Exit");
+            Console.WriteLine();
             var result = Console.ReadLine();
             return Convert.ToInt32(result);
         }
-        
+        static public int DisplayStudentsMenu()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Students' List menu:");
+            Console.WriteLine();
+            Console.WriteLine("1. Show all records");
+            Console.WriteLine("2. Find by ID");
+            Console.WriteLine("3. Find by name");
+            Console.WriteLine("4. Find by surname");
+            Console.WriteLine("5. Find by age");
+            Console.WriteLine("6. Find by class (eg. 1A or 3B)");
+            Console.WriteLine("7. Exit");
+            Console.WriteLine();
+            var result3 = Console.ReadLine();
+            return Convert.ToInt32(result3);
+        }
+
 
 
         static void Main(string[] args)
@@ -28,10 +46,11 @@ namespace Main
 
             List<Student> studentlist = new List<Student>();
             int studentCount = 0;
-            int userInput = 0;
+            int userInputLibraryMenu = 0;
+            int userInputStudentsMenu = 0;
             do
             {
-                if (userInput == 1)
+                if (userInputLibraryMenu == 1)
                 {
                     
                     studentlist.Add(new Student());
@@ -46,13 +65,28 @@ namespace Main
                     studentlist[studentCount].SetClass(Console.ReadLine());
                     studentCount = studentCount + 1;
                 }
-                if (userInput == 3)
+                if (userInputLibraryMenu == 3)
                 {
-                    studentlist[0].ShowStudent();
+                    do
+                    {
+                        if(userInputStudentsMenu == 1)
+                        {
+                            for (int i = 0; i < studentCount; i++)
+                            {
+                                studentlist[i].ShowStudent();
+                            }
+                            Console.ReadKey();
+                        }
+                        userInputStudentsMenu = DisplayStudentsMenu();
+                    }
+                    while (userInputStudentsMenu != 7);
+                    
+                    
                 }
 
-                userInput = DisplayLibraryMenu();
-            } while (userInput != 5);
+                userInputLibraryMenu = DisplayLibraryMenu();
+                
+            } while (userInputLibraryMenu != 5);
             
             
 
