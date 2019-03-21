@@ -8,11 +8,16 @@ namespace Main
 {
     public class Student
     {
+        private int ID;
         private string Name;
         private string Surname;
         private int Age;
         private string Class;
 
+        public void SetID(int I)
+        {
+            ID = I;
+        }
         public void SetName(string N)
         {
             Name = N;
@@ -34,6 +39,7 @@ namespace Main
             public void ShowStudent()
         {
             Console.WriteLine("Info about student:");
+            Console.WriteLine("ID: " + ID);
             Console.WriteLine("Name: " + Name);
             Console.WriteLine("Surname: " + Surname);
             Console.WriteLine("Age: " + Age);
