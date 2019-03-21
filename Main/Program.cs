@@ -71,11 +71,20 @@ namespace Main
                     {
                         if(userInputStudentsMenu == 1)
                         {
+                            
                             for (int i = 0; i < studentCount; i++)
                             {
                                 studentlist[i].ShowStudent();
                             }
                             Console.ReadKey();
+                        }
+                        if(userInputStudentsMenu == 2)
+                        {
+                            Console.WriteLine("Insert ID number");
+                            int i = Convert.ToInt32(Console.ReadLine());
+                            studentlist[i].ShowStudent();
+                            Console.ReadKey();
+
                         }
                         userInputStudentsMenu = DisplayStudentsMenu();
                     }
