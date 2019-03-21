@@ -35,6 +35,7 @@ namespace Main
                 {
                     
                     studentlist.Add(new Student());
+                    studentlist[studentCount].SetID(studentCount);
                     Console.WriteLine("Insert Name:");
                     studentlist[studentCount].SetName(Console.ReadLine());
                     Console.WriteLine("Insert Surname:");
