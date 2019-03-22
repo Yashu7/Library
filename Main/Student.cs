@@ -43,5 +43,16 @@ namespace Main
             Console.WriteLine("ID: {0}. Name: {1}. Surname: {2}. Age: {3}. Class: {4}. ",ID, Name, Surname, Age, Class);
             Console.WriteLine();
         }
+            public bool ByName(string FindName)
+        {
+           if (FindName == Name)
+            {
+                return true;
+            }
+           else
+            {
+                return false;
+            }
+        }
     }
 }

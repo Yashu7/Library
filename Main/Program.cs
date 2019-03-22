@@ -86,8 +86,24 @@ namespace Main
                             Console.ReadKey();
 
                         }
+                        
+                        if(userInputStudentsMenu == 3)
+                        {
+                            Console.WriteLine("Insert name");
+                            string name = Console.ReadLine();
+                            for (int i = 0; i < studentCount; i++)
+                            {
+                               
+                                if (studentlist[i].ByName(name))
+                                {
+                                    studentlist[i].ShowStudent();
+                                }
+                                
+                            }
+                            Console.ReadKey();
+                        }
                         userInputStudentsMenu = DisplayStudentsMenu();
-                    }
+                    } 
                     while (userInputStudentsMenu != 7);
                     
                     
