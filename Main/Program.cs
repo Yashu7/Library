@@ -52,7 +52,7 @@ namespace Main
             {
                 if (userInputLibraryMenu == 1)
                 {
-                    
+                    bool tryAgain = true;
                     studentlist.Add(new Student());
                     studentlist[studentCount].SetID(studentCount);
                     Console.WriteLine("Insert Name:");
@@ -60,7 +60,7 @@ namespace Main
                     Console.WriteLine("Insert Surname:");
                     studentlist[studentCount].SetSurname(Console.ReadLine());
                     Console.WriteLine("Insert Age:");
-                    bool tryAgain = true;
+                    tryAgain = true;
                     while (tryAgain)
                     {
                         try
