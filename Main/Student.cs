@@ -54,5 +54,16 @@ namespace Main
                 return false;
             }
         }
+        public bool BySurname(string FindSurname)
+        {
+            if (FindSurname == Surname)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

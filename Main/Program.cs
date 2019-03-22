@@ -102,6 +102,21 @@ namespace Main
                             }
                             Console.ReadKey();
                         }
+                        if (userInputStudentsMenu == 4)
+                        {
+                            Console.WriteLine("Insert surname");
+                            string surname = Console.ReadLine();
+                            for (int i = 0; i < studentCount; i++)
+                            {
+
+                                if (studentlist[i].BySurname(surname))
+                                {
+                                    studentlist[i].ShowStudent();
+                                }
+
+                            }
+                            Console.ReadKey();
+                        }
                         userInputStudentsMenu = DisplayStudentsMenu();
                     } 
                     while (userInputStudentsMenu != 7);
