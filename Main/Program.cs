@@ -60,7 +60,20 @@ namespace Main
                     Console.WriteLine("Insert Surname:");
                     studentlist[studentCount].SetSurname(Console.ReadLine());
                     Console.WriteLine("Insert Age:");
-                    studentlist[studentCount].SetAge(Convert.ToInt32(Console.ReadLine()));
+                    bool tryAgain = true;
+                    while (tryAgain)
+                    {
+                        try
+                        {
+                            studentlist[studentCount].SetAge(Convert.ToInt32(Console.ReadLine()));
+                            tryAgain = false;
+                        }
+                        catch (FormatException)
+                        {
+                            Console.WriteLine("Age was in incorrect format, please write just numbers.");
+                            Console.WriteLine("Insert Age:");
+                        }
+                    }
                     Console.WriteLine("Insert Class:");
                     studentlist[studentCount].SetClass(Console.ReadLine());
                     studentCount = studentCount + 1;
