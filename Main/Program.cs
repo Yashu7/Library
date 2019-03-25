@@ -19,7 +19,20 @@ namespace Main
             Console.WriteLine("4. Check for book");
             Console.WriteLine("5. Exit");
             Console.WriteLine();
-            var result = Console.ReadLine();
+            int result = 0;
+            while (result == 0)
+            {
+                try
+                {
+                    result = Convert.ToInt32(Console.ReadLine());
+                  
+                }
+                catch(FormatException)
+                {
+                    Console.WriteLine("Please enter number that corresponds with option.");
+                }
+            }
+           
             return Convert.ToInt32(result);
         }
         static public int DisplayStudentsMenu()
