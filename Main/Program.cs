@@ -48,7 +48,20 @@ namespace Main
             Console.WriteLine("6. Find by class (eg. 1A or 3B)");
             Console.WriteLine("7. Exit");
             Console.WriteLine();
-            var result3 = Console.ReadLine();
+            int result3 = 0;
+            while (result3 == 0)
+            {
+                try
+                {
+                    result3 = Convert.ToInt32(Console.ReadLine());
+
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Please enter number that corresponds with option.");
+                }
+            }
+
             return Convert.ToInt32(result3);
         }
 
